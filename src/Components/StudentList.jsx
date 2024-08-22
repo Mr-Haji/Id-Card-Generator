@@ -6,14 +6,26 @@ import { onValue, ref } from 'firebase/database';
 import { toast } from 'react-toastify';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
 import SearchIcon from '@mui/icons-material/Search';
-import Logo from '../Pics/Logo.png';
+import Logo from '../Pics/Icon.png';
 const List = () => {
-
     const navigate = useNavigate();
     const [IsData, setIsData] = useState([]);
+    const [IsSearch, setIsSearch] = useState('');
+    const [IsRefresh, setIsRefresh] = useState(true);
     const tableRef = useRef(null);
     const navigateToNextPage = (path, state) => {
         path ? navigate(path, state) : navigate('/');
+    }
+    // setIsSearch()
+    const searchStudent = () => {
+        const filteredData = IsData.filter((student) =>
+            student.StudentName.toLowerCase().includes(IsSearch.toLowerCase())
+        );
+        setIsData(filteredData);  // Update the state with the filtered data
+    }
+    const cancelSearch = () => {
+        setIsRefresh(!IsRefresh)
+        navigateToNextPage('/StdList')
     }
     const getProjects = async () => {
         // get data to DB
@@ -34,11 +46,9 @@ const List = () => {
             error ? ToastThrough(toast.error, "Failed To Fatch") : console.log(failed)
         }
     }
-
     useEffect(() => {
         getProjects();
-    }, []);
-
+    }, [!IsRefresh]);
     return (
         <Stack sx={{
             width: '100vw',
@@ -66,7 +76,7 @@ const List = () => {
                         // border: '1px solid #000',
                         borderRadius: '30px'
                     }}>
-                        <TextField label={'Search Student'}
+                        <TextField onChange={(e) => { setIsSearch(e.target.value) }} label={'Search Student'}
                             sx={{
                                 border: 'none',
                                 '& .MuiOutlinedInput-root': {
@@ -78,7 +88,7 @@ const List = () => {
                                 width: '500px'
                             }}
                         />
-                        <SearchIcon sx={{ fontSize: '55px' }} />
+                        <SearchIcon onClick={searchStudent} sx={{ fontSize: '55px' }} />
                     </Stack>
                     <Stack sx={{ mt: '30px', flexDirection: 'row' }}>
                         <DownloadTableExcel
@@ -88,6 +98,7 @@ const List = () => {
                         >              <Button variant='contained' sx={{ ml: 2 }}> Export excel </Button>
                         </DownloadTableExcel>
                         <Button variant='contained' sx={{ height: '38px', ml: 2 }} onClick={() => navigateToNextPage('/')}> Add Student </Button>
+                        <Button variant='contained' sx={{ height: '38px', ml: 2 }} onClick={cancelSearch}> Cancel Search </Button>
                     </Stack>
                 </Stack>
                 <TableContainer ref={tableRef}>
