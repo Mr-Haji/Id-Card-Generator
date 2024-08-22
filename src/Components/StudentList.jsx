@@ -6,6 +6,7 @@ import { onValue, ref } from 'firebase/database';
 import { toast } from 'react-toastify';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
 import SearchIcon from '@mui/icons-material/Search';
+import ToastThrough from '../Components/ToastThrough.jsx'
 import Logo from '../Pics/Icon.png';
 const List = () => {
     const navigate = useNavigate();
@@ -21,7 +22,10 @@ const List = () => {
         const filteredData = IsData.filter((student) =>
             student.StudentName.toLowerCase().includes(IsSearch.toLowerCase())
         );
-        setIsData(filteredData);  // Update the state with the filtered data
+
+        // console.log(filteredData)
+        // console.log(IsData)
+        if (filteredData.length === 0) { ToastThrough(toast.warn, "Student Not Fount"); setIsRefresh(!IsRefresh) } else (setIsData(filteredData)) // Update the state with the filtered data
     }
     const cancelSearch = () => {
         setIsRefresh(!IsRefresh)
