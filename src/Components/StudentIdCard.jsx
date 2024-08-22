@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import StuentPic from '@/Pics/Studentpic.png'
 import { useReactToPrint } from 'react-to-print';
 import { useNavigate } from 'react-router-dom';
-z
+
 const StudentIdCard = ({ StdName, StdFatherName, StdClass, StdRollNumber, StdPhoneNumber, StdDOB, StdImage }) => {
     const printRef = useRef(); // Create a ref
     const navigate = useNavigate()
