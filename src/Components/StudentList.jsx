@@ -6,7 +6,7 @@ import { onValue, ref } from 'firebase/database';
 import { toast } from 'react-toastify';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
 import SearchIcon from '@mui/icons-material/Search';
-import Logo from '../../public/Pics/Logo.png';
+import Logo from '../Pics/Logo.png';
 const List = () => {
 
     const navigate = useNavigate();

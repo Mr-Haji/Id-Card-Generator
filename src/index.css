@@ -17,7 +17,7 @@
 }
 
 .AddStudentPage {
-    background-image: url(../public//Pics/AddStudentPage.jpg);
+    background-image: url(./Pics/AddStudentPage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@
 }
 
 .StudentListPage {
-    background-image: url(../public//Pics/StudentList.jpg);
+    background-image: url(./Pics/StudentList.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 }
 
 .Cardbg {
-    background-image: url(../public//Pics/Logo.png);
+    background-image: url(./Pics/Logo.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 }
 
 .StudentInfoPage {
-    background-image: url(../public//Pics/StudentDetailsPage.jpg);
+    background-image: url(./Pics/StudentDetailsPage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

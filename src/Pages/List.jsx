@@ -7,7 +7,6 @@ import { Stack } from '@mui/material'
 const List = () => {
   return (
     <Stack className='StudentListPage' >
-{/* jdfjjdfjhfd */}
       <StudentList />
     </Stack>
   )
