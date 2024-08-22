@@ -1,7 +1,7 @@
 import '../index.css'
 import { Button, Stack, Typography } from '@mui/material'
 import React, { useRef } from 'react'
-import StuentPic from '../Pics/Studentpic.jpeg'
+import StuentPic from '@/Pics/Studentpic.jpeg'
 import { useReactToPrint } from 'react-to-print';
 import { useNavigate } from 'react-router-dom';
 

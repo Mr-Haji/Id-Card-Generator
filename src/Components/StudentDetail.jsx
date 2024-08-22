@@ -5,7 +5,7 @@ import { DB } from '../Config/FireBase/FireBase'
 import { onValue, ref, remove, } from 'firebase/database'
 import ToastThrough from './ToastThrough'
 import { toast } from 'react-toastify'
-import ProfilePic from '../Pics/StudentPic.jpeg'
+import ProfilePic from '@/Pics/StudentPic.jpeg'
 const StudentDetail = () => {
     const [IsData, setIsData] = useState([])
     const { state } = useLocation()
