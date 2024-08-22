@@ -1,0 +1,56 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+@media print {
+    .PrintSetting {
+        width: 22cm;
+        height: 22cm;
+
+    }
+}
+
+@page {
+    size: A4;
+}
+
+.AddStudentPage {
+    background-image: url(../public//Pics/AddStudentPage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.StudentListPage {
+    background-image: url(../public//Pics/StudentList.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Cardbg {
+    background-image: url(../public//Pics/Logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.StudentInfoPage {
+    background-image: url(../public//Pics/StudentDetailsPage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
