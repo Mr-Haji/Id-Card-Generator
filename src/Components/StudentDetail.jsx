@@ -5,7 +5,7 @@ import { DB } from '../Config/FireBase/FireBase'
 import { onValue, ref, remove, } from 'firebase/database'
 import ToastThrough from './ToastThrough'
 import { toast } from 'react-toastify'
-import ProfilePic from '@/Pics/StudentPic.jpeg'
+import ProfilePic from '@/Pics/Logo.png'
 const StudentDetail = () => {
     const [IsData, setIsData] = useState([])
     const { state } = useLocation()
@@ -123,7 +123,7 @@ const StudentDetail = () => {
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
-                        <img src={IsData.ProfilePic || ProfilePic} alt='ProfilePic' style={{ margin: '25px', width: '250px', height: '250px', borderRadius: '50%', border: '3px solid #000' }} />
+                        <img src={ProfilePic} alt='ProfilePic' style={{ margin: '25px', width: '250px', height: '250px', borderRadius: '50%', border: '3px solid #000' }} />
                         <Typography sx={{ fontSize: '30px' }}>
                             {IsData.StudentName + ' ' + IsData.FatherName || 'Student Name'}
                         </Typography>
